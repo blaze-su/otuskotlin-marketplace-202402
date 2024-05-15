@@ -1,17 +1,19 @@
 plugins {
-    kotlin("jvm") apply false
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.kotlin.multiplatform) apply false
 }
 
 group = "ru.otus.otuskotlin.marketplace"
-version = "1.0-SNAPSHOT"
+version = "0.0.1"
 
-allprojects {
-    repositories {
-        mavenCentral()
-    }
+repositories {
+    mavenCentral()
 }
 
 subprojects {
+    repositories {
+        mavenCentral()
+    }
     group = rootProject.group
     version = rootProject.version
 }
